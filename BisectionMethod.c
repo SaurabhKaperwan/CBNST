@@ -21,18 +21,20 @@ float main()
             printf("Enter values again\n");
     }while(1);
 
-    float x0;
-    while((x2-x1) >= E)
+    float x;
+    int i=0;
+    while(fabs(x2-x1) >= E)
     {
-        x0=(x1+x2)/2.0;
-        if(func(x0)==0.0)
+        x=(x1+x2)/2.0;
+        if(func(x)==0.0)
             break;
-        else if(func(x0)*func(x1)<0)
-            x2=x0;
+        else if(func(x)*func(x1)<0)
+            x2=x;
         else
-            x1=x0;
+            x1=x;
+        printf("Iterations:%d Roots:%f\n",++i,x);
 
     }
-    printf("Roots are : %f",x0);
+    printf("Roots are : %f Total Iterations: %d ",x,i);
     return 0;
 }
