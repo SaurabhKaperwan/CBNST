@@ -11,11 +11,6 @@ int main()
 
 	for(int i=0;i<n;i++)
 	{
-		if(a[i][i]==0.0)
-		{
-			printf("Mathematical Error\n");
-			return 0;
-		}
 		for(int j=0;j<n+1;j++)
 		{
 			printf("Enter a[%d][%d]:",i,j);
@@ -26,6 +21,11 @@ int main()
 
 	for(int i=0;i<n;i++)
 	{
+		if(a[i][i]==0.0)
+		{
+			printf("Mathematical Error\n");
+			return 0;
+		}
 		for(int j=0;j<n;j++)
 		{
 			if(i!=j)
