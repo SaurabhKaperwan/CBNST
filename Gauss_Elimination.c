@@ -7,6 +7,7 @@ int main()
 	scanf("%d",&n);
 	float a[n][n+1];
 	float ans[n];
+	float sum;
 	printf("Enter augumeted matrix:\n");
 	for (int i = 0; i < n; ++i)
 	{
@@ -20,7 +21,7 @@ int main()
 	{
 		if(a[i][i]==0.0)
 		{
-			printf("Error");
+			printf(" Mathematical Error");
 			return 0;
 		}
 		for(int j=i+1;j<n;j++)
@@ -36,12 +37,12 @@ int main()
 	ans[n-1]=a[n-1][n]/a[n-1][n-1];
 	for(int i=n-2;i>=0;i--)
 	{
-		ans[i]=a[i][n];
-		for(int j=i+1;j<=n;j++)
+		sum=0.0;
+		for(int j=i+1;j<n;j++)
 		{
-			ans[i]=ans[i]-a[i][j]*ans[j];
+			sum=sum+(a[i][j]*ans[j]);
 		}
-		ans[i]=ans[i]/a[i][i];
+		ans[i]=(a[i][n]-sum)/a[i][i];
 	}
 
 	printf("Solutions\n");
