@@ -18,7 +18,7 @@ int main()
     do
     {
         x1=g(x0);
-        printf("Step:%d and roots:%f",step,x1);
+        printf("Step:%d and roots:%f\n",step,x1);
         step++;
         if(step>N)
         {
@@ -26,7 +26,7 @@ int main()
             return 0;
         }
         x0=x1;
-    }while(fabs(x1)>e);
+    }while(fabs(f(x1))>e);
     printf("Root is %f",x1);
     return 0;
 }
